@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         List<Card> filteredCards = new ArrayList<>();
         for (int i=0; i<mCards.size(); i++){
             Card myCard = mCards.get(i);
-            String cardName = myCard.getCardName().trim().toLowerCase();
+            String cardName = myCard.getCardName().toLowerCase().replaceAll("\\s", "");
             if (cardName.contains(keyword)){
                 if (cardName.startsWith(keyword)){
                     filteredCards.add(0, myCard);
